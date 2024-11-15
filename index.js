@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
+require('dotenv').config();  // Load environment variables
 const app = express();
 
 // Middleware
@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // MongoDB Connection
-mongoose.connect('mongodb://127.0.0.1:27017/contactManager')
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
