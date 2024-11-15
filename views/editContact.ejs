@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Contact</title>
+</head>
+<body>
+    <h1>Edit Contact</h1>
+    <form action="/contacts/edit/<%= contact._id %>" method="POST">
+        <label for="contactName">Name:</label>
+        <input type="text" name="contactName" value="<%= contact.contactName %>" required>
+        <label for="contactNumber">Number:</label>
+        <input type="text" name="contactNumber" value="<%= contact.contactNumber %>" required>
+        <button type="submit">Update Contact</button>
+    </form>
+</body>
+</html>

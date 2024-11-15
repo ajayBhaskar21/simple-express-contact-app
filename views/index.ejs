@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Manager</title>
+</head>
+<body>
+    <h1>Contact Manager</h1>
+    <a href="/contacts/add">Add New Contact</a>
+    <ul>
+        <% contacts.forEach(contact => { %>
+            <li>
+                <%= contact.contactName %> - <%= contact.contactNumber %>
+                <a href="/contacts/edit/<%= contact._id %>">Edit</a>
+                <a href="/contacts/delete/<%= contact._id %>">Delete</a>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
