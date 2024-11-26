@@ -23,6 +23,11 @@ const contactSchema = new mongoose.Schema({
 const Contact = mongoose.model('Contact', contactSchema);
 
 // Routes
+
+app.get('/', (req, res) => {
+    res.send(`Display Contacts click <a href='/contacts'>here</a>`)
+})
+
 // Home - Display All Contacts
 app.get('/contacts', async (req, res) => {
     const contacts = await Contact.find();
